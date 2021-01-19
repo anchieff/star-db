@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import SwapiService from '../../services/swapi-service';
-import wihtData from '../hoc-helpers/withData';
+import React from 'react';
 import './item-list.css';
 
 
@@ -28,6 +26,4 @@ const ItemList = (props) => {
     );
 }
 
-const {getAllPeople} = new SwapiService();
-
-export default wihtData(ItemList, getAllPeople);
+export default ItemList;

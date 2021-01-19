@@ -5,13 +5,11 @@ import ErrorButton from "../error-button/";
 
 import "./app.css";
 import ErrorIndicator from '../error-indicator/error-indicator';
-import PeoplePage from '../people-page/people-page';
 import SwapiService from '../../services/swapi-service';
-import Row from '../row';
 import ItemDetails from '../item-details';
 import { Record } from '../item-details/item-details';
-import ItemList from '../item-list';
 import ErrorBoundry from '../error-boundry';
+import { PersonDetails, PersonList, PlanetDetails, PlanetList, StarshipDetails, StarshipList } from '../sw-components';
 
 export default class App extends Component {
 
@@ -85,19 +83,24 @@ export default class App extends Component {
         <div className="stardb-app">
           <Header />
 
-          <ItemList
-            getData={getAllPeople}
-            onItemSelected={() => {}}>
+          <PersonDetails itemId={1} />
 
+          <PlanetDetails itemId={2} />
+
+          <StarshipDetails itemId={5} />
+
+          <PersonList>
             { ({name}) => <span>{name}</span> }
-          </ItemList>
+          </PersonList>
 
-          <ItemList
-            getData={getAllPlanets}
-            onItemSelected={() => {}}>
-
+          <PlanetList>
             { ({name}) => <span>{name}</span> }
-          </ItemList>
+          </PlanetList>
+
+          <StarshipList>
+            { ({name}) => <span>{name}</span> }
+          </StarshipList>
+
 
         </div>
       </ErrorBoundry>

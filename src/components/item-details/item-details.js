@@ -29,7 +29,7 @@ export default class ItemDetails extends Component {
 
     componentDidUpdate(prevProps) {
       if(this.props.itemId !== prevProps.itemId) {
-        this.updatePerson();
+        this.updateItem();
       } 
     }
 
@@ -58,7 +58,7 @@ export default class ItemDetails extends Component {
       return <span>Select a person from a list</span>;
     }
 
-    const {id, name, gender, birthYear, eyeColor} = item;
+    const {name} = item;
 
     return (
       <div className="item-details card">
