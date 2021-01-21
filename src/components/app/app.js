@@ -10,6 +10,7 @@ import ItemDetails from '../item-details';
 import { Record } from '../item-details/item-details';
 import ErrorBoundry from '../error-boundry';
 import { PersonDetails, PersonList, PlanetDetails, PlanetList, StarshipDetails, StarshipList } from '../sw-components';
+import {SwapiServiceProvider} from '../swapi-service-context';
 
 export default class App extends Component {
 
@@ -80,6 +81,7 @@ export default class App extends Component {
 
     return (
       <ErrorBoundry>
+        <SwapiServiceProvider value={this.swapiService}>
         <div className="stardb-app">
           <Header />
 
@@ -101,8 +103,8 @@ export default class App extends Component {
             { ({name}) => <span>{name}</span> }
           </StarshipList>
 
-
         </div>
+        </SwapiServiceProvider>
       </ErrorBoundry>
     );
   }
